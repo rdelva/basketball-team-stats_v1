@@ -30,8 +30,12 @@ def clean_data():
     players_copy = copy.deepcopy(constants.PLAYERS)
     teams_copy = copy.deepcopy(constants.TEAMS)
     players_new =  {} #created players_new to store cleaned data
+    cleaned = []
+ 
 
+    
     for player in players_copy:
+       
         # player['name'] = player.name
         # player['guardians'] = player.guardians
         if(player['experience'] == 'YES'):
@@ -41,8 +45,9 @@ def clean_data():
        
         player['height'] = int(player['height'].split(" ")[0])
         # = int(player['height']) + "inches"
+        cleaned.append(player)
 
-    print(player)
+    print(cleaned)
 
 
 

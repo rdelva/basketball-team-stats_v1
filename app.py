@@ -1,16 +1,19 @@
-import constants
+import copy
+import constants #contains 2 constant lists called TEAMS and PLAYERS
 
 
 
 def intro():
-    print("Here are your choices: \n A) Display Team Stats \n B)Quit")
+    print("Here are your choices: \n A) Display Team Stats \n B) Quit")
     print("\n")
     choice = input("Enter an option: ")
-
-    if choice.lower() == 'A':
-        display_team_stats()
-    elif choice.lower() == 'B':
+    
+    if choice.lower() == 'a':
+        display_team_stats()        
+    elif choice.lower() == 'bcl':
          print("Ending Program ... Goodbye")
+    else:
+        print("Ending Program ... Goodbye")
          
           
 
@@ -18,16 +21,22 @@ def intro():
 
 def  display_team_stats():
     print("Team Stats")
+    print(constants.PLAYERS)
+
       
 
 def clean_data():
-    print('clean_data')        
+    print('CLEAN DATA:')        
+    players_copy = copy.deepcopy(constants.PLAYERS)
+    teams_copy = copy.deepcopy(constants.TEAMS)
+    players_new =  {}
+
 
 
 if __name__ == "__main__":
         intro()
-        display_team_stats()
         clean_data()
+
 
 
 

@@ -50,6 +50,9 @@ def clean_data():
     print(cleaned)
 
 
+def balance_teams():
+    print("BALANCE TEAMS")
+
 
 
 

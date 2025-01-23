@@ -48,17 +48,24 @@ def clean_data():
         cleaned.append(player)
 
     print(cleaned)
+    
 
 
 def balance_teams():
     print("BALANCE TEAMS")
+    print(constants.PLAYERS)
+    num_players_team = len(constants.PLAYERS) / len(constants.TEAMS)
+    print(f"\n There are {num_players_team} players for each team")
 
+
+    
 
 
 
 if __name__ == "__main__":
         intro()
         clean_data()
+        balance_teams()
 
 
 

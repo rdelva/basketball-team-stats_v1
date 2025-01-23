@@ -36,8 +36,11 @@ def clean_data():
     
     for player in players_copy:
        
-        # player['name'] = player.name
-        # player['guardians'] = player.guardians
+        player['name'] 
+        
+        guardian_list = player['guardians'].split("and")
+        player['guardians'] = guardian_list  
+        
         if(player['experience'] == 'YES'):
             player['experience'] = True
         else:
@@ -58,7 +61,7 @@ def balance_teams():
     print(f"\n There are {num_players_team} players for each team")
 
 
-    
+
 
 
 

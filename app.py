@@ -4,16 +4,20 @@ import constants #contains 2 constant lists called TEAMS and PLAYERS
 
 
 def intro():
+    print("BASKETBALL TEAM STATS TOOL\n")
+    print ("---- MENU ----\n")
     print("Here are your choices: \n A) Display Team Stats \n B) Quit")
     print("\n")
-    choice = input("Enter an option: ")
+    choice = input("Enter an option > ")
     
     if choice.lower() == 'a':
         display_team_stats()        
-    elif choice.lower() == 'bcl':
+    elif choice.lower() == 'b':
          print("Ending Program ... Goodbye")
+         exit()
     else:
         print("Ending Program ... Goodbye")
+        exit()
          
           
 
@@ -52,12 +56,12 @@ def clean_data():
         # = int(player['height']) + "inches"
         cleaned.append(player)
 
-    print(cleaned)
+    #print(cleaned)
     
 
 
 def balance_teams():
-    print("BALANCE TEAMS")
+    print("\nBALANCE TEAMS")
     num_players_team = len(constants.PLAYERS) / len(constants.TEAMS)
     print(f"\n There are {num_players_team} players for each team")
 

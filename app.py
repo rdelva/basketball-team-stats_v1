@@ -45,7 +45,7 @@ def clean_data():
         guardian_split = player['guardians'].split("and")
         guardian_list = []
 
-        player['guardians'] = guardian_list.append(guardian_split)
+        player['guardians'] = guardian_split
         
         if(player['experience'] == 'YES'):
             player['experience'] = True
@@ -57,13 +57,31 @@ def clean_data():
         cleaned.append(player)
 
     #print(cleaned)
+    balance_teams(cleaned)
     
 
 
-def balance_teams():
-    print("\nBALANCE TEAMS")
+def balance_teams(team_players):
     num_players_team = len(constants.PLAYERS) / len(constants.TEAMS)
+    players_list = len(constants.PLAYERS)
+    
+    team = copy.deepcopy(constants.TEAMS)
+    print("\nBALANCE TEAMS")  
     print(f"\n There are {num_players_team} players for each team")
+
+    for player in team_players:
+        print(player)
+
+    # for index, player in enumerate(team_players):
+    #     if index <= 0 and index >= 5:
+    #         team['Panthers'].append(player)
+    #     elif index <= 6 and index >= 12:
+    #         team['Bandits'].append(player)
+    #     else:
+    #         team['Warriors'].append(player)      
+
+    print(team)
+            
 
 
 
@@ -73,7 +91,7 @@ def balance_teams():
 if __name__ == "__main__":
         intro()
         clean_data()
-        balance_teams()
+      
 
 
 

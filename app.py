@@ -62,26 +62,26 @@ def clean_data():
 
 
 def balance_teams(team_players):
+    print("\nBALANCE TEAMS")  
+
+    # Finds out how many players should be on each team
     num_players_team = len(constants.PLAYERS) / len(constants.TEAMS)
+    
+    #amount of players
     players_list = len(constants.PLAYERS)
     
-    team = copy.deepcopy(constants.TEAMS)
-    print("\nBALANCE TEAMS")  
-    print(f"\n There are {num_players_team} players for each team")
+    #list of teams
+    teams = copy.deepcopy(constants.TEAMS)
 
-    for player in team_players:
-        print(player)
+    #turn the Teams list into a dictionary
+    team_list = {team:"" for team in teams}
+    print(team_list)
 
-    # for index, player in enumerate(team_players):
-    #     if index <= 0 and index >= 5:
-    #         team['Panthers'].append(player)
-    #     elif index <= 6 and index >= 12:
-    #         team['Bandits'].append(player)
-    #     else:
-    #         team['Warriors'].append(player)      
+    #Assign each player to a team
 
-    print(team)
-            
+
+
+   
 
 
 

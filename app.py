@@ -73,11 +73,32 @@ def balance_teams(team_players):
     #list of teams
     teams = copy.deepcopy(constants.TEAMS)
 
-    #turn the Teams list into a dictionary
-    team_list = {team:"" for team in teams}
+    #turn the Teams list into a list of dictionaries
+    #[{key:value] for temp_vars(s) in iterable}
+    # team_list = {team:"" for team in teams}
+    team_list = [{team:[]} for team in teams]
+    player_list = []
+
     print(team_list)
 
+    # team_list[index]['Panthers'] = []
+    # print(team_list[index]['Panthers'])
+     
+    for index, player in enumerate(team_players):
+        if index >=0 and index <= 5:
+            team_list[0]['Panthers'].append(player)
+        elif index >= 6 and index <= 11:
+            team_list[1]['Bandits'].append(player)
+        else:
+            team_list[2]['Warriors'].append(player)
+    
+   
+
+    print(team_list[2]['Warriors'])
     #Assign each player to a team
+
+
+
 
 
 

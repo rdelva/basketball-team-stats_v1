@@ -1,5 +1,9 @@
-import copy
-import constants #contains 2 constant lists called TEAMS and PLAYERS
+import basketball_stats
+
+
+
+
+print("Hello from app.py")
 
 
 

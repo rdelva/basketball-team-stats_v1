@@ -22,11 +22,13 @@ def clean_data():
 
         player['height'] = int(player['height'].split(" ")[0])
 
-        return cleaned_player_list(player)
+        cleaned_player_list.append(player)
+
+    return cleaned_player_list
 
 def main():
     print("Hello from inside main")
-    clean_data()
+    print(clean_data())
 
 
 if __name__ == "__main__":

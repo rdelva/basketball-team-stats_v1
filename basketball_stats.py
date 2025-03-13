@@ -2,7 +2,8 @@ import copy
 import constants #contains 2 constant lists called TEAMS and PLAYERS
 
 
-#Reads the existing player data from the PLAYERS constats
+
+# Reads the existing player data from the PLAYERS constats
 def clean_data():
     players_copy = copy.deepcopy(constants.PLAYERS)
     teams_copy = copy.deepcopy(constants.TEAMS)
@@ -26,9 +27,14 @@ def clean_data():
 
     return cleaned_player_list
 
+# This function will blance the players across three teams: Panthers, Bandits, and Warriors.
+def balance_teams():
+    
+    print("BALANCE TEAMS")
+
 def main():
     print("Hello from inside main")
-    print(clean_data())
+   
 
 
 if __name__ == "__main__":

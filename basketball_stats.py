@@ -2,7 +2,6 @@ import copy
 import constants #contains 2 constant lists called TEAMS and PLAYERS
 
 
-
 # Reads the existing player data from the PLAYERS constats
 def clean_data():
     players_copy = copy.deepcopy(constants.PLAYERS)
@@ -25,15 +24,44 @@ def clean_data():
 
         cleaned_player_list.append(player)
 
-    return cleaned_player_list
+    balance_teams(cleaned_player_list)
 
 # This function will blance the players across three teams: Panthers, Bandits, and Warriors.
-def balance_teams():
-    
-    print("BALANCE TEAMS")
+def balance_teams(player_list):
+    # determines how many people in a team
+    num_players_team = int(len(constants.PLAYERS) / len(constants.TEAMS))
+    teams = copy.deepcopy(constants.TEAMS) # Duplicate Team list
 
-def main():
-    print("Hello from inside main")
+    
+    #turn the Teams list into a list of dictionaries
+    #[{key:value] for temp_vars(s) in iterable}
+    
+    # team_list = {team:"" for team in teams}
+    team_list = [{team:[]} for team in teams]
+   
+
+    # team_list[index]['Panthers'] = []
+    # print(team_list[index]['Panthers'])
+    # Puts the player list into 3 teams 
+    for index, player in enumerate(player_list):
+        if index >=0 and index <= 5:
+            team_list[0]['Panthers'].append(player)
+        elif index >= 6 and index <= 11:
+            team_list[1]['Bandits'].append(player)
+        else:
+            team_list[2]['Warriors'].append(player)
+
+    print(team_list) 
+    return team_list
+    
+
+ 
+ 
+
+
+def main():    
+    clean_data()
+   
    
 
 

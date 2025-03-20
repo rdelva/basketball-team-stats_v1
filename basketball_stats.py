@@ -51,16 +51,24 @@ def balance_teams(player_list):
         else:
             team_list[2]['Warriors'].append(player)
 
-    print(team_list) 
+    # print(team_list) 
+    display_team_stats(teams)
     return team_list
     
 
- 
- 
+def display_team_choices():
+    teams = copy.deepcopy(constants.TEAMS)
+    for index, team in enumerate(teams, 1):  
+        print(f'{index}) {team}')
+
+
+def display_team_stats():
+
 
 
 def main():    
     clean_data()
+    display_team_stats()
    
    
 

@@ -79,8 +79,8 @@ def display_team_stats(team_choice, teams):
 
     if team_choice < len(teams) and team_choice != 0:
         team_details = (teams_list[team_choice - 1])
-        print(team_details)
-        # print(f'Team: {teams[2]} Stats')
+        team_name = teams[team_choice - 1]        
+        print(f'Team: {team_name} Stats')
         # print('------------------------\n')
         
 

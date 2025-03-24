@@ -7,7 +7,7 @@ def intro():
     print ("---- MENU----\n")
     print("Here are your choices: \n 1) Display Team Stats \n 2) Quit")
     print("\n\n")
-    choice = int(input("Enter an option > "))
+    choice = int(input("Enter an option >  \n"))
     
     if choice == 1:                       
         basketball_stats.display_team_choices() 

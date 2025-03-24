@@ -21,10 +21,12 @@ def clean_data():
             player['experience'] = False
 
         player['height'] = int(player['height'].split(" ")[0])
-
+    
         cleaned_player_list.append(player)
 
-    balance_teams(cleaned_player_list)
+    
+    return cleaned_player_list
+    #
 
 # This function will blance the players across three teams: Panthers, Bandits, and Warriors.
 def balance_teams(player_list):
@@ -50,9 +52,9 @@ def balance_teams(player_list):
             team_list[1]['Bandits'].append(player)
         else:
             team_list[2]['Warriors'].append(player)
-
-    # print(team_list) 
-    display_team_stats(teams)
+    
+    # display_team_stats(team_list)
+    
     return team_list
     
 
@@ -60,18 +62,34 @@ def display_team_choices():
     teams = copy.deepcopy(constants.TEAMS)
     for index, team in enumerate(teams, 1):  
         print(f'{index}) {team}')
+    team_choice = int(input("Enter an option:"))  
+    display_team_stats(team_choice, teams)
+
+def display_team_stats(team_choice, teams):
+    #print(team_choice)
+    #team_choice, team_list
+    # print( team_choice , "team choice")    
+    clean_list = clean_data() 
+    teams_list = balance_teams(clean_list)
+
+    #print(teams_list)
+    # for list in team_list[3]:
+    #     print(list[0])
 
 
-def display_team_stats():
+    if team_choice < len(teams) and team_choice != 0:
+        team_details = (teams_list[team_choice - 1])
+        print(team_details)
+        # print(f'Team: {teams[2]} Stats')
+        # print('------------------------\n')
+        
 
 
-
-def main():    
-    clean_data()
-    display_team_stats()
+# def main():    
+#     #clean_data()    
    
    
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

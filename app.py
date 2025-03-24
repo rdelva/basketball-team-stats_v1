@@ -10,9 +10,9 @@ def intro():
     choice = int(input("Enter an option > "))
     
     if choice == 1:                       
-        basketball_stats.display_team_choices()    
-        team_choice = int(input("Enter an option:"))        
-        basketball_stats.display_team_choices(team_choice)    
+        basketball_stats.display_team_choices() 
+        #team_choice = int(input("Enter an option:"))        
+        #basketball_stats.display_team_stats(number = team_choice)    
     elif choice == '2':
          print("Ending Program ... Goodbye")
          exit()

@@ -65,24 +65,53 @@ def display_team_choices():
     team_choice = int(input("Enter an option:"))  
     display_team_stats(team_choice, teams)
 
+
 def display_team_stats(team_choice, teams):
     #print(team_choice)
     #team_choice, team_list
     # print( team_choice , "team choice")    
     clean_list = clean_data() 
     teams_list = balance_teams(clean_list)
+    team_details = (teams_list[team_choice - 1])
+    team_details_players = []
+    team_details_experienced = []
+    team_details_inexperienced = []
+    team_details_height = []
 
-    #print(teams_list)
-    # for list in team_list[3]:
-    #     print(list[0])
+    for key, value in team_details.items():
+        team_details_players.append(value)
+
+    for i in range(0, len(team_details_players)):
+        for item in team_details_players[i]:
+            print(item['name'])
+
+    # for item in team_details_players:
+    #     print(item['name'])
 
 
-    if team_choice < len(teams) and team_choice != 0:
-        team_details = (teams_list[team_choice - 1])
-        team_name = teams[team_choice - 1]        
-        print(f'Team: {team_name} Stats')
-        # print('------------------------\n')
+
+    # if team_choice < len(teams) and team_choice != 0:
+    #     team_details = (teams_list[team_choice - 1])
+    #     team_name = teams[team_choice - 1]    
         
+    #     print(f'Team Details')
+    #     print(team_details.keys())
+
+    #     print(f'Team: {team_name} Stats')
+        
+    #     print('------------------------\n')
+        
+    #     print(f'Total Players: {len(team_details)} ')
+    #     print(f'Total experienced: {len(team_details)} ')
+    #     print(f'Total inexperienced: {len(team_details)} ')
+    #     print(f'Average height: {len(team_details)} ')
+        
+    #     print('------------------------\n')
+
+    #     print(f'Players on Team:')
+        
+
+
 
 
 # def main():    

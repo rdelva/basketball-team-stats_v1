@@ -28,6 +28,31 @@ def clean_data():
 def balance_team(player_list):
     print(player_list)
 
+    # determinues how many people in a team
+    teams = copy.deepcopy(constants.TEAMS)
+    num_players_team = len(player_list) / len(teams)
+
+    #Turn the teams list into the list of dictionaries
+    team_list = {team:[] for team in teams}
+    print(team_list)
+
+
+    # #Put the player list into three teams
+    # for index, player in enumerate(player_list):
+    #     if index > 0 and index <= num_players_team - 1:
+
+
+
+    
+
+
+
+
+
+    
+
+
+
 
 def main():
      player_list = clean_data()

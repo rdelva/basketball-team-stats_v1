@@ -51,8 +51,9 @@ def balance_team(player_list):
     print(teams_list)
         
 
+def team_stats():
 
-
+    
 
 
 

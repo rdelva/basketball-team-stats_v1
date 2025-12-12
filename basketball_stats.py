@@ -3,6 +3,7 @@ import constants
 
 
 
+
 def intro_menu():
 
     print("BASKETBALL TEAM STATS TOOL")
@@ -56,20 +57,18 @@ def balance_team(player_list):
 
     # determinues how many people in a team
     teams = copy.deepcopy(constants.TEAMS)
-    num_players_team = len(player_list) / len(teams)
+    num_players_team = int(len(player_list) / len(teams))
 
     #Turn the teams list into the list of dictionaries
     teams_list = [{team:[]} for team in teams ]
-    # print(type(teams))
-    # print(teams_list)
+  
 
     #sort each player into Teams List
-    
 
     for index, player in enumerate(player_list):
-        if index <= 5: 
+        if index <= num_players_team - 1: 
             teams_list[0]['Panthers'].append(player)
-        elif index <=11:
+        elif index <= (num_players_team * 2) - 1:
              teams_list[1]['Bandits'].append(player)
         else: 
              teams_list[2]['Warriors'].append(player)
@@ -84,6 +83,7 @@ def team_stats(team_choice, teams_list):
   
     print(f'Team: {team_choice} Stats')
     print("--------------------\n")
+   
 
     team_members = [] # stores the team_members info
     # selected_choice = is a list of dictionaries. Depending on which team you choose it will go the dictionary group that holds the team info
@@ -91,9 +91,17 @@ def team_stats(team_choice, teams_list):
     for name in selected_choice:        
         print(name['name'])
         team_members.append(name['name'])
+
+    
+    #Total Players
+    print(f'Total players: { len(selected_choice)}')    
  
     #Team Member List
-    print(", ".join(team_members))           
+    print(", ".join(team_members))      
+
+    continue_option = input("Press Enter to continue...")
+
+    if(continue_option == )     
        
 
 

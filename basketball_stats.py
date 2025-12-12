@@ -101,7 +101,8 @@ def team_stats(team_choice, teams_list):
 
     continue_option = input("Press Enter to continue...")
 
-    if(continue_option == )     
+    if(continue_option =="" ):
+        exit()
        
 
 

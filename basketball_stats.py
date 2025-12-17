@@ -80,29 +80,35 @@ def balance_team(player_list):
 teams_list = balance_team(player_list)
 
 def team_stats(team_choice, teams_list):
-  
+    print("\n")
     print(f'Team: {team_choice} Stats')
     print("--------------------\n")
    
-
-    team_members = [] # stores the team_members info
+ 
     # selected_choice = is a list of dictionaries. Depending on which team you choose it will go the dictionary group that holds the team info
-    selected_choice = teams_list[0][f'{team_choice}']
-    for name in selected_choice:        
-        print(name['name'])
-        team_members.append(name['name'])
 
+    for team in teams_list:  #goes through the list
+        for key, value in team.items():  # within each index, it pulls the value from the key and value
+            if(key == team_choice):                
+                selected_choice = value
     
     #Total Players
     print(f'Total players: { len(selected_choice)}')    
  
-    #Team Member List
-    print(", ".join(team_members))      
+    #Team Member List 
+    team_members = [] # stores the team_members info      
+    for name in selected_choice:     
+        team_members.append(name['name'])
 
+    print(", ".join(team_members))      
+    print("\n")
     continue_option = input("Press Enter to continue...")
+    # if(keyboard.is_pressed("Enter") == continue_option):
+    #    print("Enter is pressed")
 
     if(continue_option =="" ):
-        exit()
+        print("\n")
+        intro_menu()
        
 
 

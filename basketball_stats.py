@@ -1,9 +1,6 @@
 import copy
 import constants
 
-
-
-
 def intro_menu():
 
     print("BASKETBALL TEAM STATS TOOL")

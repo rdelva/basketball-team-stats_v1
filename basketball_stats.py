@@ -14,7 +14,8 @@ def intro_menu():
     else: 
         exit()
     
-    team_choice = input("\n Enter an option: ").lower()
+    team_choice = ""
+    team_choice = input("\nEnter an option: ").lower()
    
     if (team_choice == "a"):
         return "Panthers"
@@ -24,7 +25,7 @@ def intro_menu():
     else:
         return "Warriors"   
 
-team_choice = intro_menu()
+# selected_team = intro_menu()
 
 
 # importing the teams dictionary and players dictionary 
@@ -74,7 +75,7 @@ def balance_team(player_list):
 
 
 
-teams_list = balance_team(player_list)
+
 
 def team_stats(team_choice, teams_list):
     print("\n")
@@ -97,27 +98,32 @@ def team_stats(team_choice, teams_list):
     for name in selected_choice:     
         team_members.append(name['name'])
 
+    print("Guardians:\n")
     print(", ".join(team_members))      
     print("\n")
-    continue_option = input("Press Enter to continue...")
-    # if(keyboard.is_pressed("Enter") == continue_option):
-    #    print("Enter is pressed")
 
+    # If Enter key is pressed it will call the intro_menu again
+
+    continue_option = input("Press Enter to continue...")   
     if(continue_option =="" ):
         print("\n")
-        intro_menu()
+        # intro_menu()
+        main()
        
 
+# team_info = team_stats(selected_team, teams_list) 
 
-team_info = team_stats(team_choice, teams_list) 
-print(team_info)
-def results():
-    print("")
+
 
 def main():
-    results()
+    selected_team = intro_menu()
+    clean_data()
+    teams_list = balance_team(player_list)
+    team_stats(selected_team, teams_list) 
+    # team_info = team_stats(selected_team, teams_list) 
     
     
+    # results()
     
     
     
